@@ -34,13 +34,12 @@ public class StudentController {
     Map<String, Object> map = new HashMap<>();
 
     @PostMapping("/addStudent")
-    @CrossOrigin(methods = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> addStudent(@RequestBody Student addStudent,
     		@RequestHeader("Access-Control-Allow-Origin") String star, 
     		@RequestHeader("Access-Control-Allow-Headers") String accept) {
     	
     	map.clear();
-//    	Student student = service.saveStudent(addStudent);
+    	Student student = service.saveStudent(addStudent);
 
 //        if(student.getRollNo()==addStudent.getRollNo()) {
 //        	map.put("status_code", 401);
@@ -136,7 +135,6 @@ public class StudentController {
     }
 
     @DeleteMapping("/delete/{roll_no}")
-    @CrossOrigin(methods = RequestMethod.DELETE)
     public ResponseEntity<Map<String, Object>> deleteStudent(@PathVariable int roll_no) {
     	map.clear();
     	

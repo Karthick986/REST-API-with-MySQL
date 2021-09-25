@@ -13,8 +13,6 @@ public class StudentService {
     @Autowired
     private StudentRepository repository;
     
-
-
     public Student saveStudent(Student student) {
         return repository.save(student);
     }
